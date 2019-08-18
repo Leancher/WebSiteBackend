@@ -43,7 +43,8 @@ Partial Class Server
         Dim NameList As String() = GetDataFromDB.GetCategoriesNameList()
         For Index = 0 To NameList.Count - 1
             Dim Name = NameList(Index)
-            NameList(Index) = GetDataFromDB.GetCategoryProp(Index)
+            Dim Item = GetDataFromDB.GetCategoryProp(Index)
+            NameList(Index) = Item
         Next Index
         Return String.Join("&", NameList)
     End Function
